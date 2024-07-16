@@ -3,7 +3,35 @@
 {% block title %}Ajouter une entreprise{% endblock %}
 
 {% block body %}
-    <h1>Ajouter une entreprise</h1>
-    {{ form(formAddEntreprise)}}
+    {% if edit %}
+        <h1>Editer une entreprise</h1>
+    {% else %}
+        <h1>Ajouter une entreprise</h1>
+    {% endif %}
+    
+    {#{{ form(formAddEntreprise)}}#}
+    {{ form_start(formAddEntreprise) }}
+    <div class="row">
+        <div class="col-sm">
+            {{ form_row(formAddEntreprise.raisonSociale)}}
+        </div>
+        <div class="col-sm">
+            {{ form_row(formAddEntreprise.dateCreation)}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            {{ form_row(formAddEntreprise.adresse)}}
+        </div>
+        <div class="col-sm">
+            {{ form_row(formAddEntreprise.cp)}}
+        </div>
+        <div class="col-sm">
+            {{ form_row(formAddEntreprise.ville)}}
+        </div>
+    </div>
+        
+        {{ form_row(formAddEntreprise.valider)}}
+    {{ form_end(formAddEntreprise) }}
 
 {% endblock %}
