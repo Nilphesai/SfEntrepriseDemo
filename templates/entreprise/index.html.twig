@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Liste des entreprises</h1>
     
-    {% for element in tableau %}
-        {{ element|e }}</br>
+    {% for entreprise in entreprises %}
+       <b> {{ entreprise }}</b> </br>
     {% endfor %}
 {% endblock %}
